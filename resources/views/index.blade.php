@@ -31,9 +31,10 @@
     </section>
     <section id="winners">
         <x-layout.container>
-            <div class="xl:w-1200 lg:w-960 w-full lg:px-0 px-6 m-auto mb-12">
+            <div class="xl:w-1200 lg:w-960 w-full lg:px-0 px-6 m-auto mb-8">
                 <x-layout.heading class="text-4xl lg:text-5xl font-bold">ZWYCIĘZCY</x-layout.heading>
             </div>
+          <x-layout.winners />
         </x-layout.container>
     </section>
 </x-layout>
