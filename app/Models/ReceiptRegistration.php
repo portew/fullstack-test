@@ -46,4 +46,8 @@ class ReceiptRegistration extends Model
         return $this->hasOne(WinnerContactRequest::class, 'submission_id');
     }
 
+  public function store()
+  {
+    return $this->belongsTo(Store::class);
+  }
 }
