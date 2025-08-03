@@ -122,6 +122,7 @@ class ActivationController extends Controller
             'participant_name' => $validated['participant-name'],
             'email' => $validated['email'],
             'phone' => $validated['phone'],
+            'store_id' => $validated['store'],
             'receipt_number' => $validated['receipt-number'],
             'purchase_date' => $purchaseDate,
             'receipt_image_path' => $receiptImagePath,

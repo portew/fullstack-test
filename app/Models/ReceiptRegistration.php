@@ -12,6 +12,7 @@ class ReceiptRegistration extends Model
         'participant_name',
         'email',
         'phone',
+    'store_id',
         'receipt_number',
         'purchase_date',
         'receipt_image_path',
