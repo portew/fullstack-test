@@ -25,6 +25,7 @@ class ActivationController extends Controller
             'participant-name' => ['required', 'min:3'],
             'email' => 'required|email',
             'phone' => 'required|min:9',
+            'store' => ['required', 'integer', 'min:0', Rule::exists('stores', 'id')],
             'receipt-number' => 'required|min:4',
             'purchase-date' => [
                 'required',
@@ -67,6 +68,9 @@ class ActivationController extends Controller
 
             'receipt-number.required' => 'Wpisz numer paragonu.',
             'receipt-number.min' => 'Numer paragonu musi zawierać co najmniej 4 znaki.',
+
+            'store.required' => 'Wybierz sklep z którego pochodzi paragon',
+            'store.exists' => 'Sklep musi pochodzić z listy dostępnych sklepów.',
 
             'purchase-date.required' => 'Podaj datę zakupu.',
             'purchase-date.date_format' => 'Data zakupu musi być w formacie dzień-miesiąc-rok (np. 24-04-2025).',
