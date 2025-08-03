@@ -96,7 +96,7 @@ class ActivationController extends Controller
                 'errors' => $validator->errors()->all(),
             ]);
 
-            return redirect('/konkurs#form')
+            return redirect('/#form')
                 ->withErrors($validator)
                 ->withInput()
                 ->with('error', 'W formularzu wystąpiły błędy.');
