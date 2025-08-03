@@ -47,6 +47,14 @@ class ReceiptRegistration extends Model
         return $this->hasOne(WinnerContactRequest::class, 'submission_id');
     }
 
+  public static function winners()
+  {
+    return SELF::whereNotNull('prize')
+      ->with('store')
+      ->get()
+      ->groupBy('prize');
+  }
+
   public function store()
   {
     return $this->belongsTo(Store::class);
