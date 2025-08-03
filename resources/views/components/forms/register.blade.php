@@ -27,6 +27,19 @@
                     @enderror
                 </x-forms.field>
                 <x-forms.field>
+                    <x-forms.select name="store" id="store" required>
+                      @if (empty(old('store')))
+                        <option disabled hidden selected>Wybierz sklep</option>
+                      @endif
+                      @foreach ($stores as $store)
+                        <option value="{{ $store->id }}" {{ $store->id == old('store') ? 'selected' : ''}}> {{$store->name}} </option>
+                      @endforeach
+                    </x-forms.select>
+                    @error('store')
+                    <x-layout.paragraph class="text-red-950 font-sans registererror"><small>{{ $message }}</small></x-layout.paragraph>
+                    @enderror
+                </x-forms.field>
+                <x-forms.field>
                     <x-forms.input class="two" name="purchase-date" id="purchase-date" value="{{ old('purchase-date') }}" placeholder="Data zakupu (dd-mm-rrrr)*" required />
                     @error('purchase-date')
                     <x-layout.paragraph class="text-red-950 font-sans registererror"><small>{{ $message }}</small></x-layout.paragraph>
